@@ -1,7 +1,6 @@
 import { styled } from './../../styles/theme.config.js'
 
 export const Nav = styled('nav', {
-  position       : 'fixed',
   display        : 'flex',
   alignItems     : 'center',
   justifyContent : 'space-between',

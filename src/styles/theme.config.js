@@ -9,7 +9,7 @@ export const { styled, css, globalCss, getCssString, theme, keyframes } = create
         primary_light  : '#F34E6D',
         secondary      : '#37958F',
         font           : '#292C3E',
-        gray           : '#83848F',
+        gray           : '#535766',
       },
 
       fonts: {

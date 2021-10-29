@@ -1,6 +1,5 @@
-
 import * as S from './Navigation.style.js';
-import * as Icons from 'react-feather'
+import * as Icons from 'react-feather';
 
 import  logo  from './../../assets/myntra1.png'
 
