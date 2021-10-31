@@ -9,12 +9,13 @@ const ProductCard = ({product}) => {
 					<img 
 						src = {`${product.image}`}
 						width = "210px"
+						alt = "product"
 					/>
 				</S.ImageContainer>
 
 				<S.InfoContainer>
 					<S.Name> {product.name} </S.Name>
-					<S.Description> {product.tagline} </S.Description>
+					<S.Description> {product.description} </S.Description>
 					<S.Price> Rs. {product.price} </S.Price>
 				</S.InfoContainer>
 

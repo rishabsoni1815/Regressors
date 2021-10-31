@@ -14,7 +14,7 @@ export const ImageContainer = styled('div', {
 })
 
 export const InfoContainer = styled('div', {
-	padding : '1rem'
+	padding : '0rem 0.5rem'
 })
 
 export const Name = styled('p', {
