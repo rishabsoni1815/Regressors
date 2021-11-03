@@ -7,7 +7,7 @@ const ProductCard = ({product}) => {
 					
 				<S.ImageContainer>
 					<img 
-						src = {`${product.image}`}
+						src = {`${product.images[0]}`}
 						width = "210px"
 						alt = "product"
 					/>

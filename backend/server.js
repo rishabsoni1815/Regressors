@@ -21,18 +21,6 @@ connection.once('open', () => {
 	console.log("MongoDB database connection established successfully");
 })
 
-// //From product.model.js file
-// const Product = require('./models/products.model.js');
-
-// //find() function on the model
-// Product.find({},(error,data)=>{
-// 	if(error){
-// 		console.log(error)
-// 	}else{
-// 	    console.log('Here is the data ==>', data);
-// 	}
-// })
-
 const products = require('./routes/products');
 app.use('/products', products);
 
