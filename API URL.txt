@@ -1,3 +1,0 @@
-Model API for Combo Prediction:
-
-https://api-combo-kmeans.herokuapp.com/
