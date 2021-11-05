@@ -26,7 +26,7 @@ const Home = () => {
 				}
 			</S.Container> 
 
-			<ProductPage product = {intialState[3]}/>
+			<ProductPage product = {intialState[1]}/>
 			
 		</>
 	)
