@@ -35,7 +35,7 @@ const Combo = ({id}) => {
 */}
 			<S.ComboContainer>
 
-			{comboPack.product_id.map((x, key) => (
+			{comboPack?.product_id?.map((x, key) => (
 				allProds.map((product, key) => (
 							x === product.product_id 
 							? 	

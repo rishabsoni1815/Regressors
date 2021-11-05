@@ -1,34 +1,39 @@
 import * as S from './Home.style.js';
 import { useState, useEffect } from 'react';
+
+import { Link, BrowserRouter as Router, Route } from 'react-router-dom';
+
 import ProductCard from './../ProductCard/ProductCard';
 import ProductPage from './../ProductPage/ProductPage';
 
 const Home = () => {
 	
-	const [intialState, setInitialState] = useState([]);
+	const [allProds, setAllProds] = useState([]);
 
 	useEffect(() => {
 		fetch('http://localhost:5000/products').then(res => {
 			if(res.ok){
 				return res.json()
 			}
-		}).then(jsonResponse => setInitialState(jsonResponse))
+		}).then(jsonResponse => setAllProds(jsonResponse))
 		.catch(err => console.log('Error: ' + err));
 	}, [])
 
 	return(
-		<>
+		<Router>
 			 <S.Container>
-				{
-					intialState.map((product, index) => (
-						<ProductCard product = {product}/>
+				{	
+					allProds.map((product, index) => (
+						<Link to={`/${product._id}`}>
+							<ProductCard product = {product}/>
+						</Link>
 					))
 				}
 			</S.Container> 
 
-			<ProductPage product = {intialState[1]}/>
+			<Route exact path="/:id" component={ProductPage}/>
 			
-		</>
+		</Router>
 	)
 }
 
