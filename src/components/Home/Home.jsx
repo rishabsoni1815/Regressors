@@ -19,20 +19,25 @@ const Home = () => {
 		.catch(err => console.log('Error: ' + err));
 	}, [])
 
+	const foo = () => {	
+		setTimeout(function(){
+		    window.location.reload()
+		}, 200);
+	}
+
 	return(
 		<Router>
 			 <S.Container>
 				{	
 					allProds.map((product, index) => (
 						<Link to={`/${product._id}`}>
-							<ProductCard product = {product}/>
+							<a  onClick = {foo}>
+								<ProductCard product = {product}/>
+							</a>
 						</Link>
 					))
 				}
-			</S.Container> 
-
-			<Route exact path="/:id" component={ProductPage}/>
-			
+			</S.Container> 			
 		</Router>
 	)
 }

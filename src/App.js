@@ -7,6 +7,7 @@ import { Link, BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Navigation from './components/Navigation/Navigation';
 import Home from './components/Home/Home';
+import ProductPage from './components/ProductPage/ProductPage'
 
 function App() {
   globalStyle()
@@ -14,7 +15,8 @@ function App() {
       <Router>
         <Layout> 
           <Navigation />
-          <Route exact path="/" component={Home}/>          
+          <Route exact path="/" component={Home}/>  
+          <Route exact path="/:id" component={ProductPage}/>        
         </Layout>
       </Router>
   );
