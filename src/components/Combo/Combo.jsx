@@ -3,22 +3,13 @@ import { useState, useEffect } from 'react';
 
 import plusImage from './../../assets/plus.png';
 
-const Combo = ({id}) => {
+const Combo = ({product}) => {
 
-	const [comboPack, setComboPack] = useState({"product_id": [5, 13], "products": ["U.S. Polo Assn. Men White & Grey Sneakers", "Puma Unisex Set of 2 Navy Blue & Red Cushioned Sneaker Socks"]});
+	const [comboPack, setComboPack] = useState({});
 	const [allProds, setAllProds] = useState([]);
 
-	useEffect(() => {
-		fetch(`https://api-combo-kmeans.herokuapp.com/${id}`).then(res => {
-			if(res.ok){
-				return res.json()
-			}
-		}).then(jsonResponse => setComboPack(jsonResponse))
-		.catch(err => console.log(`Error : `, err));
-	}, [])
-
   useEffect(() => {
-		fetch('http://localhost:5000/products').then(res => {
+		fetch('https://floating-atoll-22103.herokuapp.com/products').then(res => {
 			if(res.ok){
 				return res.json()
 			}
@@ -26,33 +17,42 @@ const Combo = ({id}) => {
 		.catch(err => console.log('Error: ' + err));
 	}, [])
 
+		useEffect(() => {
+		fetch(`https://api-combo-kmeans.herokuapp.com/${product.product_id}`).then(res => {
+			if(res.ok){
+				return res.json()
+			}
+		}).then(jsonResponse => setComboPack(jsonResponse))
+		.catch(err => console.log(`Error : `, err));
+	}, [product])
+
+
 	return (
 		<>
-{/*		{console.log("i am here")}
-			{console.log("product_id @ combo.js ", id)}
-			{console.log("the two child ids @ combo are ", comboPack)}
-			{console.log("all products @ combo.js", allProds)}
-*/}
 			<S.ComboContainer>
+			{console.log("compbopack", comboPack?.product_id)}
 
-			{comboPack.product_id.map((x, key) => (
+			{
+			comboPack && comboPack.product_id
+			?
+			comboPack.product_id.map((x, key) => (
 				allProds.map((product, key) => (
-							x === product.product_id 
-							? 	
+							x === product.product_id
+							?
 								<S.Container>
-									
+
 									<S.PlusContainer>
 									{
-										comboPack.product_id.indexOf(x) !== 0 
+										comboPack.product_id.indexOf(x) !== 0
 									?
-										<img src = {plusImage} width = "40px" />
-									: 
+										<img alt = "+" src = {plusImage} width = "40px" />
+									:
 										null
 									}
 									</S.PlusContainer>
-									
+
 									<S.ProductContainer>
-										<S.Image 
+										<S.Image
 											src = {product.images[0]}
 											alt = "product image"
 											width = "180px"
@@ -64,12 +64,16 @@ const Combo = ({id}) => {
 										</S.InfoContainer>
 									</S.ProductContainer>
 								</S.Container>
-							: 
-								null 
-					))					
+							:
+								null
+					))
 
-			))}
-			
+			))
+
+			:
+				null
+			}
+
 			</S.ComboContainer>
 
 		</>
