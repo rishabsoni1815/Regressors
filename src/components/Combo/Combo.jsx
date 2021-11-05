@@ -9,7 +9,7 @@ const Combo = ({product}) => {
 	const [allProds, setAllProds] = useState([]);
 
   useEffect(() => {
-		fetch('http://localhost:5000/products').then(res => {
+		fetch('https://floating-atoll-22103.herokuapp.com/products').then(res => {
 			if(res.ok){
 				return res.json()
 			}
@@ -31,28 +31,28 @@ const Combo = ({product}) => {
 		<>
 			<S.ComboContainer>
 			{console.log("compbopack", comboPack?.product_id)}
-			
+
 			{
 			comboPack && comboPack.product_id
 			?
 			comboPack.product_id.map((x, key) => (
 				allProds.map((product, key) => (
-							x === product.product_id 
-							? 	
+							x === product.product_id
+							?
 								<S.Container>
-									
+
 									<S.PlusContainer>
 									{
-										comboPack.product_id.indexOf(x) !== 0 
+										comboPack.product_id.indexOf(x) !== 0
 									?
-										<img src = {plusImage} width = "40px" />
-									: 
+										<img alt = "+" src = {plusImage} width = "40px" />
+									:
 										null
 									}
 									</S.PlusContainer>
-									
+
 									<S.ProductContainer>
-										<S.Image 
+										<S.Image
 											src = {product.images[0]}
 											alt = "product image"
 											width = "180px"
@@ -64,16 +64,16 @@ const Combo = ({product}) => {
 										</S.InfoContainer>
 									</S.ProductContainer>
 								</S.Container>
-							: 
-								null 
-					))					
+							:
+								null
+					))
 
 			))
 
 			:
 				null
 			}
-			
+
 			</S.ComboContainer>
 
 		</>

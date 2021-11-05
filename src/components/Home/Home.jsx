@@ -1,17 +1,16 @@
 import * as S from './Home.style.js';
 import { useState, useEffect } from 'react';
 
-import { Link, BrowserRouter as Router, Route } from 'react-router-dom';
+import { Link, BrowserRouter as Router } from 'react-router-dom';
 
 import ProductCard from './../ProductCard/ProductCard';
-import ProductPage from './../ProductPage/ProductPage';
 
 const Home = () => {
-	
+
 	const [allProds, setAllProds] = useState([]);
 
 	useEffect(() => {
-		fetch('http://localhost:5000/products').then(res => {
+		fetch('https://floating-atoll-22103.herokuapp.com/products').then(res => {
 			if(res.ok){
 				return res.json()
 			}
@@ -19,7 +18,7 @@ const Home = () => {
 		.catch(err => console.log('Error: ' + err));
 	}, [])
 
-	const foo = () => {	
+	const loadProduct = () => {
 		setTimeout(function(){
 		    window.location.reload()
 		}, 200);
@@ -28,16 +27,16 @@ const Home = () => {
 	return(
 		<Router>
 			 <S.Container>
-				{	
+				{
 					allProds.map((product, index) => (
 						<Link to={`/${product._id}`}>
-							<a  onClick = {foo}>
+							<S.Button  onClick = {loadProduct}>
 								<ProductCard product = {product}/>
-							</a>
+							</S.Button>
 						</Link>
 					))
 				}
-			</S.Container> 			
+			</S.Container>
 		</Router>
 	)
 }

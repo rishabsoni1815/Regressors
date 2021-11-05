@@ -13,7 +13,7 @@ const ProductPage = ({match, location}) => {
 	const [allProds, setAllProds] = useState([]);
 
 	useEffect(() => {
-		fetch('http://localhost:5000/products').then(res => {
+		fetch('https://floating-atoll-22103.herokuapp.com/products').then(res => {
 			if(res.ok){
 				return res.json()
 			}

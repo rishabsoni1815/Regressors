@@ -8,3 +8,8 @@ export const Container = styled('div', {
 	flexWrap : 'wrap',
 	margin : '1rem 2rem',
 })
+
+export const Button = styled('div', {
+	background : 'none',
+	border : 'none',
+})
