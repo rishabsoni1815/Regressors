@@ -4,7 +4,10 @@ export const Container = styled('div', {
 	margin : '2rem',
 	display : 'flex',
 	float : 'left',
-	flexDirection : 'column'
+	flexDirection : 'column',
+	'@media only screen and (max-width : 600px)':{
+		margin : '0.5rem',
+	}
 })
 
 export const Heading = styled('p', {
@@ -31,6 +34,11 @@ export const Combo = styled('div', {
 export const Wrapper = styled('div' , {
 	display : 'flex',
 	justifyContent : 'center',
+
+	'a, a:link, a:visited, a:link, a:visited:active, a:link:active' : {
+		textDecoration : 'none',
+		color : 'inherit',
+	},
 })
 
 export const ProductContainer = styled('div', {
@@ -45,6 +53,10 @@ export const PlusContainer = styled('div' , {
 })
 
 export const Image = styled('img', {
+	width : "180px",
+	'@media only screen and (max-width : 600px)':{
+		width : "120px",
+	}
 })
 
 export const InfoContainer = styled('div', {
@@ -71,7 +83,7 @@ export const Button = styled('button', {
 	display : 'flex',
 	justifyContent : 'center',
 	alignItems : 'center',
-	background : '$primary',
+	background : '$primary_light',
 	border : 'none',
 	minWidth : '60%',
 	padding : '12px 15px',
@@ -82,9 +94,14 @@ export const Button = styled('button', {
 	textTransform : 'uppercase',
 	borderRadius : '3px',
 	cursor : 'pointer',
+	transition : '0.2s',
 
 	'&:hover' : {
-		background : '$primary_light',
+		background : '$primary',
+	},
+
+	'&:active' : {
+		transform : 'scale(0.98)'
 	}
 })
 

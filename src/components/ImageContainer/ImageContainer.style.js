@@ -6,6 +6,12 @@ export const Container = styled('div', {
 	alignItems : 'center',
 	justifyContent : 'space-around',
 
+	'@media only screen and (max-width : 600px)' : {
+		width : '90%',
+		justifyContent : 'space-around',
+		margin : '0 auto'
+	}
+
 })
 
 export const Image = styled('img', {
@@ -20,5 +26,9 @@ export const Image = styled('img', {
 export const ImageContainer = styled('div', {
 	width : '50%',
 	overflow : 'hidden',
-	marginRight : '0.5rem'
+	marginRight : '0.5rem',
+
+	'@media only screen and (max-width : 600px)' : {
+		
+	}
 })
