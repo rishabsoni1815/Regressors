@@ -5,7 +5,7 @@ export const { styled, css, globalCss, getCssString, theme, keyframes } = create
       colors: {
         black          : '#030303',
         white          : '#FAFAFD',
-        primary        : '#F34E6D',
+        primary        : '#DD3D66',
         primary_light  : '#F34E6D',
         secondary      : '#37958F',
         font           : '#292C3E',
