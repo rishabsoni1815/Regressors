@@ -12,18 +12,31 @@ export const Nav = styled('nav', {
   width          : '100%',
   padding : '2rem 2rem ',
   boxShadow: '0 4px 12px 0 rgb(0 0 0 / 5%)',
+
+  '@media only screen and (max-width : 600px)' : {
+    padding : '0.5rem'
+  }
 })
 
 export const Container = styled('div', {
   display        : 'flex',
   alignItems     : 'center',
   justifyContent : 'center',
+
+  '@media only screen and (max-width : 600px)' : {
+    width : '100vw',
+  },
+
+  'nth-of-type(2)' : {
+    display : 'flex',
+  } 
 })
 
 export const LogoContainer = styled('div', {
 	display        : 'flex',
   alignItems     : 'center',
   justifyContent : 'center',
+
 })
 
 export const Link = styled('a', {
@@ -38,6 +51,9 @@ export const Link = styled('a', {
     color   : '$gray',
   },
 
+  '@media only screen and (max-width : 600px)' : {
+    fontSize : '10px'
+  }
 })
 
 export const SearchContainer = styled('div', {
@@ -71,4 +87,13 @@ export const Icon = styled('a', {
 	'&:hover' : {
     color : '$black'
   }
+})
+
+export const Image = styled('img' , {
+  height : "60px",
+  
+  '@media only screen and (max-width : 600px)' : {
+    height : '45px',
+  }
+
 })

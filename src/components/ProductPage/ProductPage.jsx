@@ -43,7 +43,14 @@ const ProductPage = ({match, location}) => {
 					<InfoContainer product = {product}/>
 				</S.Container>
 				{console.log("product_id @ productpage : ", product?.product_id)}
-				<Combo product = {product}/>
+			
+				{
+					product.price 
+					?
+						<Combo product = {product}/>
+					:
+						null
+				}
 			</>
 	)
 }

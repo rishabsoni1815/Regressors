@@ -6,7 +6,11 @@ export const Container = styled('div', {
 
 	'&:hover' : {
 		boxShadow : '0 2px 16px 4px rgb(40 44 63 / 7%)',
-	}	
+	},
+
+	'@media only screen and (max-width : 600px)':{
+		width  : '260px',	
+  	}
 })
 
 export const ImageContainer = styled('div', {

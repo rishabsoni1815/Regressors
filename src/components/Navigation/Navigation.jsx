@@ -1,6 +1,8 @@
 import * as S from './Navigation.style.js';
 import * as Icons from 'react-feather';
 
+import { Link } from 'react-router-dom';
+
 import  logo  from './../../assets/myntra1.png'
 
 const Navigation = () => {
@@ -8,13 +10,14 @@ const Navigation = () => {
 		<>
 			<S.Nav>
 				<S.Container>
-					<S.LogoContainer>
-						<img 
-							src = { logo }
-							alt = "logo"
-							height = "60px"
-						/>
-					</S.LogoContainer>
+					<Link to='/'>
+						<S.LogoContainer>
+							<S.Image 
+								src = { logo }
+								alt = "logo"
+							/>
+						</S.LogoContainer>
+					</Link>
 					<S.Link>MEN</S.Link>
 					<S.Link>WOMEN</S.Link>
 					<S.Link>KIDS</S.Link>

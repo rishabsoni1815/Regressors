@@ -2,6 +2,7 @@ import * as S from './Combo.style.js';
 import * as Icons from 'react-feather';
 
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import plusImage from './../../assets/plus.png';
 
@@ -28,6 +29,11 @@ const Combo = ({product}) => {
 		.catch(err => console.log(`Error : `, err));
 	}, [product])
 
+	const loadProduct = () => {
+		setTimeout(function(){
+		    window.location.reload()
+		}, 200);
+	}
 
 	return (
 		<S.Container>
@@ -56,18 +62,19 @@ const Combo = ({product}) => {
 										}
 										</S.PlusContainer>
 
-										<S.ProductContainer>
-											<S.Image
-												src = {product.images[0]}
-												alt = "product image"
-												width = "180px"
-											/>
-											<S.InfoContainer>
-												<S.Name> {product.name} </S.Name>
-												<S.Description> {product.description} </S.Description>
-												<S.Price> {` Rs. ${product.price}`} </S.Price>
-											</S.InfoContainer>
-										</S.ProductContainer>
+										<Link to={`/${product._id}`} onClick = {loadProduct}>
+											<S.ProductContainer>
+												<S.Image
+													src = {product.images[0]}
+													alt = "product image"
+												/>
+												<S.InfoContainer>
+													<S.Name> {product.name} </S.Name>
+													<S.Description> {product.description} </S.Description>
+													<S.Price> {` Rs. ${product.price}`} </S.Price>
+												</S.InfoContainer>
+											</S.ProductContainer>
+										</Link>
 									</S.Wrapper>
 								:
 									null
@@ -80,10 +87,16 @@ const Combo = ({product}) => {
 			}
 			</S.Combo>
 			
-				<S.Button>
-					<Icons.ShoppingBag size = "18px" />
-				  <S.Text>Add To Bag</S.Text>
-				</S.Button>
+			{
+					product.price 
+					?
+						<S.Button>
+							<Icons.ShoppingBag size = "18px" />
+						  <S.Text>Add To Bag</S.Text>
+						</S.Button>
+					:
+						null
+			}
 
 			</S.ComboContainer>
 
