@@ -1,4 +1,3 @@
-import "./App.css";
 import globalStyle from "./styles/global.style.js";
 
 import { Layout } from "./styles/theme.config.js";

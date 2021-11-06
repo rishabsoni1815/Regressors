@@ -35,7 +35,7 @@ const Combo = ({ product }) => {
 
   useEffect(() => {
     calcTotalPrice();
-  }, [comboPack, calcTotalPrice]);
+  }, [comboPack]);
 
   const calcTotalPrice = () => {
     setTotalPrice(0);
