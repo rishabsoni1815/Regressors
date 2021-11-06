@@ -1,23 +1,23 @@
-import { styled } from './../../styles/theme.config.js'
+import { styled } from "./../../styles/theme.config.js";
 
-export const Container = styled('div', {
-	display : 'flex',
-	justifyContent : 'left',
-	alignItems : 'top', 
-	flexDirection : 'row',
-	flexWrap : 'wrap',
-	margin : '1rem 2rem',
+export const Container = styled("div", {
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "top",
+  flexDirection: "row",
+  flexWrap: "wrap",
+  margin: "1rem 2rem",
 
-	'a' : {
-		textDecoration : 'none',
-	},
+  a: {
+    textDecoration: "none",
+  },
 
-	'a:visited' : {
-		color : 'inherit',
-	},
-})
+  "a:visited": {
+    color: "inherit",
+  },
+});
 
-export const Button = styled('div', {
-	background : 'none',
-	border : 'none',
-})
+export const Button = styled("div", {
+  background: "none",
+  border: "none",
+});
