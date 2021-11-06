@@ -1,7 +1,7 @@
 import { styled } from './../../styles/theme.config.js'
 
 export const Container = styled('div', {
-	width  : '210px',
+	width  : '220px',
 	margin : '1rem 3rem',
 
 	'&:hover' : {
