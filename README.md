@@ -40,14 +40,3 @@ npm install
 npm run build
 ```
 
-## ✨ Team
-
-<table>
-	<tr>
-		<td>
-			<a href="https://github.com/rishabsoni1815/Regressors/graphs/contributors">
-        <img src="https://contrib.rocks/image?repo=rishabsoni1815/Regressors" />
-      </a>
-		</td>
-	</tr>
-</table>
